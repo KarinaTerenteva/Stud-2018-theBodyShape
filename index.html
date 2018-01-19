@@ -17,9 +17,9 @@
         </div>
         <form name="param">
             <div class="m1" id="m1">
-                <p>Обхват плеча (см) <input name="shoulders" autofocus pattern="\d{2,3}" value="90"></p>
-                <p>Обхват талии (см) <input name="waist" pattern="\d{2,3}" value="65"></p>
-                <p>Обхват бёдер (см) <input name="thighs" pattern="\d{2,3}" value="90"></p>
+                <p>Обхват плеча (см): <input name="shoulders" autofocus pattern="\d{2,3}" value="90" size="3"></p>
+                <p>Обхват талии (см): <input name="waist" pattern="\d{2,3}" value="65" size="3"></p>
+                <p>Обхват бёдер (см): <input name="thighs" pattern="\d{2,3}" value="90" size="3"></p>
                 <button type="submit" id="calculate">Рассчитать</button>
             </div>
         </form>
@@ -29,7 +29,9 @@
             <button id="no">Нет</button>
         </div>
         <div>
+            <p id="description"></p>
             <img src="#">
+            <button id="home">на главную</button>
         </div>
     </main>
 

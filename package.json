@@ -1,6 +1,7 @@
 {
   "name": "stud-2018-thebodyshape",
   "version": "1.0.0",
+  "description": "Example determines the shape of a woman's body in two ways",
   "main": "index.js",
   "devDependencies": {
     "ts-loader": "^3.2.0",
