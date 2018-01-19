@@ -1,0 +1,25 @@
+{
+  "name": "stud-2018-thebodyshape",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:scripts": "webpack",
+    "postinstall": "npm run build:scripts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarinaTerenteva/Stud-2018-theBodyShape.git"
+  },
+  "author": "Karina Terenteva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KarinaTerenteva/Stud-2018-theBodyShape/issues"
+  },
+  "homepage": "https://github.com/KarinaTerenteva/Stud-2018-theBodyShape#readme"
+}
