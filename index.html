@@ -8,21 +8,32 @@
 </head>
 <body>
     <header>
-        <h1>Определить тип фигуры</h1>
+        <h1>Узнайте свой тип фигуры</h1>
     </header>
     <main>
-        <div class="methods">
-            <button type="button" data-action="parameters">по параметрам</button>
-            <button type="button" data-action="externally">по внешним признакам</button>
+        <div class="methods" id="methods">
+            <button id="parameters">по параметрам</button>
+            <button id="externelly">по внешним признакам</button>
         </div>
-        <div id='area'>
-            <p id='shoulders'>Обхват плеча</p>
-            <p id='waist'>Обхват талии</p>
-            <p id='thighs'>Обхват бёдер</p>
+        <form name="param">
+            <div class="m1" id="m1">
+                <p>Обхват плеча (см) <input name="shoulders" autofocus pattern="\d{2,3}" value="90"></p>
+                <p>Обхват талии (см) <input name="waist" pattern="\d{2,3}" value="65"></p>
+                <p>Обхват бёдер (см) <input name="thighs" pattern="\d{2,3}" value="90"></p>
+                <button type="submit" id="calculate">Рассчитать</button>
+            </div>
+        </form>
+        <div class="m2" id="m2">
+            <p id="question">Одна часть Вашего тела шире, чем все остальные?</p>
+            <button id="yes">Да</button>
+            <button id="no">Нет</button>
+        </div>
+        <div>
+            <img src="#">
         </div>
     </main>
 
             
-    <script type="module" src="scripts/index.ts"></script>
+    <script src="scripts/build/main.js"></script>
 </body>
 </html>
