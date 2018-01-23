@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -68,11 +68,13 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__All_index__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return showButtonHome; });
 ;
+function showButtonHome() {
+    const h = document.getElementById('home');
+    h.style.display = 'block';
+}
 
-Object(__WEBPACK_IMPORTED_MODULE_0__All_index__["a" /* default */])();
 
 
 /***/ }),
@@ -80,22 +82,61 @@ Object(__WEBPACK_IMPORTED_MODULE_0__All_index__["a" /* default */])();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return showImage; });
+;
+function showImage(shape) {
+    const link = 'img/' + shape + '.jpg';
+    const elem = document.getElementsByTagName('img')[0];
+    elem.src = link;
+    elem.style.display = 'block';
+}
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__All_index__ = __webpack_require__(3);
+;
+
+Object(__WEBPACK_IMPORTED_MODULE_0__All_index__["a" /* default */])();
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return main; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__InitEveryButton__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InitFormButton__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__InitParamMethod__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InitExternellyMethod__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__InitHomeButton__ = __webpack_require__(6);
 ;
 
 
-let q;
+
 function main() {
-    q = 0;
-    initParam();
-    initCalc();
-    initExtern();
-    initYes();
-    initNo();
-    InitHome();
+    Object(__WEBPACK_IMPORTED_MODULE_0__InitParamMethod__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_1__InitExternellyMethod__["a" /* default */])();
+    Object(__WEBPACK_IMPORTED_MODULE_2__InitHomeButton__["a" /* default */])();
 }
+
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return initParam; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ShowHomeButton__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ShowResultImage__ = __webpack_require__(1);
+;
+
+
 function initParam() {
     const button = document.getElementById('parameters');
     const m = document.getElementById('methods');
@@ -106,9 +147,10 @@ function initParam() {
         }
         m.style.display = 'none';
         m1.style.display = 'block';
-        showButtonHome();
+        Object(__WEBPACK_IMPORTED_MODULE_0__ShowHomeButton__["a" /* default */])();
+        initCalc();
     };
-    Object(__WEBPACK_IMPORTED_MODULE_0__InitEveryButton__["a" /* default */])(button, onParam);
+    button.addEventListener('click', onParam);
 }
 function initCalc() {
     const button = document.getElementById('calculate');
@@ -121,10 +163,11 @@ function initCalc() {
         const w = form.elements[1].value;
         const t = form.elements[2].value;
         const res = calculate(Number(s), Number(w), Number(t));
-        showResult1(res);
+        showResult(res);
         form.style.display = 'none';
+        event.preventDefault();
     };
-    Object(__WEBPACK_IMPORTED_MODULE_1__InitFormButton__["a" /* default */])(button, onCalc);
+    button.addEventListener('click', onCalc);
 }
 function calculate(s, w, t) {
     if (s / t >= 1.05)
@@ -140,17 +183,27 @@ function calculate(s, w, t) {
     else
         return 5;
 }
-function showResult1(res) {
+function showResult(res) {
     const shape = ['invtriangle', 'triangle', 'hourglass', 'circle', 'rectangle', 'none'];
-    showImage(shape[res]);
+    Object(__WEBPACK_IMPORTED_MODULE_1__ShowResultImage__["a" /* default */])(shape[res]);
 }
-function showImage(shape) {
-    const link = 'img/' + shape + '.jpg';
-    const elem = document.getElementsByTagName('img')[0];
-    elem.src = link;
-    elem.style.display = 'block';
-}
+
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return initExtern; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ShowHomeButton__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ShowResultImage__ = __webpack_require__(1);
+;
+
+
+let q;
 function initExtern() {
+    q = 0;
     const button = document.getElementById('externelly');
     const m = document.getElementById('methods');
     const m2 = document.getElementById('m2');
@@ -160,9 +213,11 @@ function initExtern() {
         }
         m.style.display = 'none';
         m2.style.display = 'block';
-        showButtonHome();
+        Object(__WEBPACK_IMPORTED_MODULE_0__ShowHomeButton__["a" /* default */])();
+        initYes();
+        initNo();
     };
-    Object(__WEBPACK_IMPORTED_MODULE_0__InitEveryButton__["a" /* default */])(button, onExtern);
+    button.addEventListener('click', onExtern);
 }
 function initYes() {
     const button = document.getElementById('yes');
@@ -172,7 +227,7 @@ function initYes() {
         }
         choice(1);
     };
-    Object(__WEBPACK_IMPORTED_MODULE_0__InitEveryButton__["a" /* default */])(button, onYes);
+    button.addEventListener('click', onYes);
 }
 function initNo() {
     const button = document.getElementById('no');
@@ -182,7 +237,7 @@ function initNo() {
         }
         choice(0);
     };
-    Object(__WEBPACK_IMPORTED_MODULE_0__InitEveryButton__["a" /* default */])(button, onNo);
+    button.addEventListener('click', onNo);
 }
 function choice(num) {
     let elem = document.getElementById('question');
@@ -226,13 +281,13 @@ function choice(num) {
     if (q > 10) {
         q -= 11;
         elem.innerHTML = res[q];
-        showResult2(q);
+        showResult(q);
         hideChoiceButton();
     }
     else
         elem.innerHTML = questions[q];
 }
-function showResult2(res) {
+function showResult(res) {
     const des = ['Для этого типа характерны грудь средних размеров, широкая талия, умеренного размера ягодицы и обычные ноги. Женщины этого типа чаще остальных одеваются неправильно. Это происходит, в основном, из-за слишком широкой талии. Но и это поправимо.',
         'Если у вас широкие плечи, небольшой животик, плоские ягодицы и короткие ноги, то у вас тип телосложения «брикет». Многих расстраивает отсутствие плавных линий и манящих изгибов, но это вовсе не значит, что вам не подходит женственная одежда.',
         'Одна из самых утонченных фигур. Эти женщины отличаются высоким ростом, длинными ногами, плечами и бедрами одной ширины и слабозаметной талией.',
@@ -248,7 +303,7 @@ function showResult2(res) {
     const d = document.getElementById('description');
     d.innerHTML = des[res];
     const shape = ['apple', 'brick', 'column', 'vase', 'hour', 'cello', 'cornet', 'bell', 'goblet', 'lollipop', 'skittle', 'pear'];
-    showImage('2' + shape[res]);
+    Object(__WEBPACK_IMPORTED_MODULE_1__ShowResultImage__["a" /* default */])('2' + shape[res]);
 }
 function hideChoiceButton() {
     const y = document.getElementById('yes');
@@ -256,10 +311,16 @@ function hideChoiceButton() {
     y.style.display = 'none';
     n.style.display = 'none';
 }
-function showButtonHome() {
-    const h = document.getElementById('home');
-    h.style.display = 'block';
-}
+
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InitHome; });
+;
 function InitHome() {
     const button = document.getElementById('home');
     button.style.display = 'none';
@@ -269,40 +330,7 @@ function InitHome() {
         }
         location.reload();
     };
-    Object(__WEBPACK_IMPORTED_MODULE_0__InitEveryButton__["a" /* default */])(button, onHome);
-}
-
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return buttonAction; });
-;
-function buttonAction(button, action) {
-    const onAct = (event) => {
-        action(event);
-    };
-    button.addEventListener('click', onAct);
-}
-
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return buttonAction; });
-;
-function buttonAction(button, action) {
-    const onAct = (event) => {
-        action(event);
-        event.preventDefault();
-    };
-    button.addEventListener('click', onAct);
+    button.addEventListener('click', onHome);
 }
 
 
