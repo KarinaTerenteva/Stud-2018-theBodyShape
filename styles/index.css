@@ -1,13 +1,40 @@
-h1{
+body{
+    background-color: #aae0fa;
     font-family: 'Lucida Sans Unicode', Verdana, sans-serif;
-    padding: 3%;
     text-align: center;
 }
 
+h1{
+    color: #203a58;
+    margin: 8% 20% 5%;
+    font-size: 40px;
+}
+
 button{
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    padding: 5px 15px;
-    margin: 3%;
+    margin: 3%; 
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    color: #203a58;
+    padding: 7px 18px;
+    font-size: 15px;
+    background-color: #fdd01c;
+    -webkit-box-shadow: 0px 3px 0px #caa616;
+    -moz-box-shadow: 0px 3px 0px #caa616;
+    box-shadow: 0px 3px 0px #caa616;
+}
+
+button:hover {
+    background-color: #f0c51a;
+}
+
+button:active {
+    position: relative;
+    top: 2px;
+    -webkit-box-shadow: 0px 1px 0px #fdd01c;
+    -moz-box-shadow: 0px 1px 0px #fdd01c;
+    box-shadow: 0px 1px 0px #fdd01c;
 }
 
 img{
@@ -23,37 +50,29 @@ img{
 }
 
 #description{
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    /* 'Lucida Sans Unicode', Verdana, sans-serif; */
     line-height: 135%;
-
     width: 55%;
     margin: 0 auto;
+    text-align: justify;
 }
 
 #home{
-    margin: 20px auto;
-    text-align: center;  
+    margin: 30px auto;
 }
 
 .methods{
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
-    text-align: center;
 }
 
 .m1{
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     width: 40%;
     margin: 0 auto;
-    text-align: center;
     display: none;
 }
 
 .m2{
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     width: 40%;
     margin: 0 auto;
-    text-align: center;
     display: none;
 }
