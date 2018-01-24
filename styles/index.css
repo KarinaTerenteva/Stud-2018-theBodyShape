@@ -2,10 +2,10 @@ body{
     background-color: #aae0fa;
     font-family: 'Lucida Sans Unicode', Verdana, sans-serif;
     text-align: center;
+    color: #203a58;
 }
 
 h1{
-    color: #203a58;
     margin: 8% 20% 5%;
     font-size: 40px;
 }
